@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name payload2022_custom)(type KiCad)(uri /home/joe/UWRocketry/Payload-2022/lib/payload2022_custom.pretty)(options "")(descr ""))
+)
