@@ -65,72 +65,14 @@ Text Notes 2550 1350 2    50   ~ 0
 GPS MODULE
 Text Notes 6300 4150 2    50   ~ 0
 POWER SWITCH
-$Comp
-L power:+BATT #PWR011
-U 1 1 6017627A
-P 6700 1600
-F 0 "#PWR011" H 6700 1450 50  0001 C CNN
-F 1 "+BATT" H 6500 1750 50  0000 L CNN
-F 2 "" H 6700 1600 50  0001 C CNN
-F 3 "" H 6700 1600 50  0001 C CNN
-	1    6700 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR09
-U 1 1 60174E09
-P 6600 3550
-F 0 "#PWR09" H 6600 3300 50  0001 C CNN
-F 1 "GND" H 6700 3350 50  0000 R CNN
-F 2 "" H 6600 3550 50  0001 C CNN
-F 3 "" H 6600 3550 50  0001 C CNN
-	1    6600 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR08
-U 1 1 60174547
-P 7450 2750
-F 0 "#PWR08" H 7450 2500 50  0001 C CNN
-F 1 "GND" H 7455 2577 50  0000 C CNN
-F 2 "" H 7450 2750 50  0001 C CNN
-F 3 "" H 7450 2750 50  0001 C CNN
-	1    7450 2750
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR07
-U 1 1 60172EEF
-P 6850 1600
-F 0 "#PWR07" H 6850 1450 50  0001 C CNN
-F 1 "+3V3" H 6900 1750 50  0000 C CNN
-F 2 "" H 6850 1600 50  0001 C CNN
-F 3 "" H 6850 1600 50  0001 C CNN
-	1    6850 1600
-	1    0    0    -1  
-$EndComp
-Text Label 6600 3150 0    50   ~ 0
-SHARP_CS_D5
-Text Label 6600 3050 0    50   ~ 0
-SHARP_DISP_D6
-Text Label 6600 2750 0    50   ~ 0
-GPS_FIX_D11
-Text Label 6600 2650 0    50   ~ 0
-GPS_PPS_D12
-Text Label 4200 1950 2    50   ~ 0
-RST
-Text Label 8650 2200 2    50   ~ 0
+Text Label 8650 2050 2    50   ~ 0
 SCK
-Text Label 8650 2350 2    50   ~ 0
+Text Label 8650 2200 2    50   ~ 0
 MOSI
 Text Label 9600 2350 0    50   ~ 0
 SHARP_CS_D5
 Text Label 9600 2050 0    50   ~ 0
 SHARP_DISP_D6
-Text Label 4200 2450 2    50   ~ 0
-BTN_A1
-Text Label 4200 2550 2    50   ~ 0
-BTN_A2
 Text Notes 1800 7100 2    50   ~ 0
 MAKES ERC HAPPY
 $Comp
@@ -199,36 +141,8 @@ F 3 "~" H 1050 7350 50  0001 C CNN
 	1    1050 7350
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:LED D2
-U 1 1 6021AE05
-P 7000 1850
-F 0 "D2" H 7050 1750 50  0000 C CNN
-F 1 "PWR_RED" H 7100 2000 50  0000 C CNN
-F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7000 1850 50  0001 C CNN
-F 3 "~" H 7000 1850 50  0001 C CNN
-	1    7000 1850
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R_US R2
-U 1 1 6021D72C
-P 7300 1850
-F 0 "R2" V 7400 1850 50  0000 C CNN
-F 1 "160" V 7186 1850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 7340 1840 50  0001 C CNN
-F 3 "~" H 7300 1850 50  0001 C CNN
-	1    7300 1850
-	0    -1   -1   0   
-$EndComp
 Text Notes 10850 3400 2    50   ~ 0
 BUTTON PADS FOR FLIGHT CONTROL
-Text Label 9500 5800 2    50   ~ 0
-BTN_ROLL-
-Text Label 9500 5400 2    50   ~ 0
-BTN_ROLL+
-Text Label 9500 5000 2    50   ~ 0
-BTN_PITCH-
 Connection ~ 9900 5800
 Wire Wire Line
 	9900 5950 9900 5800
@@ -280,8 +194,6 @@ F 3 "~" H 9700 6000 50  0001 C CNN
 	1    9700 5800
 	1    0    0    -1  
 $EndComp
-Text Label 9500 4600 2    50   ~ 0
-BTN_PITCH+
 Connection ~ 9900 5000
 Wire Wire Line
 	9900 4600 9900 5000
@@ -336,42 +248,7 @@ NoConn ~ 6250 4550
 NoConn ~ 6250 4750
 NoConn ~ 6250 4950
 $Comp
-L FEATHER_M0_BASIC_PROTO:FEATHER_M0_BASIC_PROTO U2
-U 1 1 602C87A2
-P 5400 2750
-F 0 "U2" H 5400 3917 50  0000 C CNN
-F 1 "FEATHER_M0_BASIC_PROTO" H 5400 3826 50  0000 C CNN
-F 2 "FEATHER_M0_BASIC_PROTO:FEATHER_M0_BASIC_PROTO" H 5400 2750 50  0001 L BNN
-F 3 "" H 5400 2750 50  0001 L BNN
-F 4 "Manufacturer Recommendation" H 5400 2750 50  0001 L BNN "STANDARD"
-F 5 "Adafruit" H 5400 2750 50  0001 L BNN "MANUFACTURER"
-	1    5400 2750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6700 1600 6700 1950
-Wire Wire Line
-	6700 1950 6600 1950
-Text Label 4200 3250 2    50   ~ 0
-GPS_TX
-Text Label 4200 3350 2    50   ~ 0
-GPS_RX
-Text Label 4200 3150 2    50   ~ 0
-MISO
-Text Label 4200 3050 2    50   ~ 0
-MOSI
-Text Label 4200 2950 2    50   ~ 0
-SCK
-Text Label 4200 2650 2    50   ~ 0
-BTN_A3
-NoConn ~ 4200 2050
-NoConn ~ 6600 2050
-NoConn ~ 4200 2250
-NoConn ~ 4200 2350
-Text Notes 4950 1350 0    50   ~ 0
-FEATHER M0 ADALOGGER
-$Comp
-L st_pat:Sharp_Display_4694 U4
+L st_pat_manual_ctrl_edits-rescue:Sharp_Display_4694-st_pat U4
 U 1 1 602ACB65
 P 8900 1750
 F 0 "U4" H 9125 1865 50  0000 C CNN
@@ -397,44 +274,8 @@ Wire Wire Line
 NoConn ~ 9600 1900
 NoConn ~ 9600 2200
 NoConn ~ 8650 2050
-Wire Wire Line
-	6850 1600 6850 1850
-Wire Wire Line
-	6850 1850 6600 1850
-Connection ~ 6850 1850
 $Comp
-L Device:LED D3
-U 1 1 60327137
-P 7000 2350
-F 0 "D3" H 6993 2095 50  0000 C CNN
-F 1 "GEN_BLU" H 6993 2186 50  0000 C CNN
-F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7000 2350 50  0001 C CNN
-F 3 "~" H 7000 2350 50  0001 C CNN
-	1    7000 2350
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6850 2350 6600 2350
-$Comp
-L Device:R_US R3
-U 1 1 60328426
-P 7300 2350
-F 0 "R3" V 7400 2350 50  0000 C CNN
-F 1 "100" V 7186 2350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 7340 2340 50  0001 C CNN
-F 3 "~" H 7300 2350 50  0001 C CNN
-	1    7300 2350
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	7450 2750 7450 2350
-Connection ~ 7450 2350
-Wire Wire Line
-	7450 1850 7450 2350
-Wire Wire Line
-	6600 2550 6600 2350
-$Comp
-L st_pat:Telemetry_Breakout U5
+L st_pat_manual_ctrl_edits-rescue:Telemetry_Breakout-st_pat U5
 U 1 1 6032FDCF
 P 1700 4350
 F 0 "U5" H 1700 4415 50  0000 C CNN
@@ -445,7 +286,7 @@ F 3 "" H 1700 4350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L st_pat:Telemetry_Breakout U6
+L st_pat_manual_ctrl_edits-rescue:Telemetry_Breakout-st_pat U6
 U 1 1 603300CF
 P 3200 4350
 F 0 "U6" H 3200 4415 50  0000 C CNN
@@ -459,10 +300,6 @@ Text Notes 1350 4200 0    50   ~ 0
 COTS GPS RECEIVER
 Text Notes 2850 4200 0    50   ~ 0
 SRAD GPS RECEIVER
-Text Label 4200 2750 2    50   ~ 0
-COTS_RECV_CS_A4
-Text Label 4200 2850 2    50   ~ 0
-SRAD_RECV_CS_A5
 $Comp
 L power:GND #PWR013
 U 1 1 6034F9BC
@@ -523,21 +360,12 @@ Text Label 2850 5000 2    50   ~ 0
 MOSI
 Text Label 2850 5150 2    50   ~ 0
 MISO
-NoConn ~ 6600 2950
-Text Label 6600 2850 0    50   ~ 0
-CPS_CS_D10
-NoConn ~ 6600 3250
-NoConn ~ 6600 3350
-Text Notes 6950 3350 0    50   ~ 0
-P2_8 (D9) IS BATTERY MONITOR, DO NOT USE
 Text Notes 1700 1500 0    50   ~ 0
 25mA
-Text Notes 7050 1450 0    50   ~ 0
-Estimate 50mA
 Text Notes 8200 1750 0    50   ~ 0
 53uA
 $Comp
-L st_pat:GPS_Breakout_746 U1
+L st_pat_manual_ctrl_edits-rescue:GPS_Breakout_746-st_pat U1
 U 1 1 60E458B0
 P 2250 1750
 F 0 "U1" H 2250 1865 50  0000 C CNN
@@ -575,8 +403,6 @@ F 3 "~" H 8450 4550 50  0001 C CNN
 $EndComp
 Text Notes 7300 4150 0    50   ~ 0
 MANUAL <-> AUTOMATIC CONTROL
-Text Label 9500 4200 2    50   ~ 0
-BTN_YAW-
 Wire Wire Line
 	9900 4200 9900 4600
 $Comp
@@ -590,8 +416,6 @@ F 3 "~" H 9700 4400 50  0001 C CNN
 	1    9700 4200
 	1    0    0    -1  
 $EndComp
-Text Label 9500 3800 2    50   ~ 0
-BTN_YAW+
 Connection ~ 9900 4200
 Wire Wire Line
 	9900 3800 9900 4200
@@ -637,6 +461,60 @@ F 3 "" H 8750 5350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8750 5150 8750 5350
+$Comp
+L payload2022_custom:PIC18F26K83-canhw U?
+U 1 1 619850FD
+P 5500 2400
+F 0 "U?" H 5475 3315 50  0000 C CNN
+F 1 "PIC18F26K83-canhw" H 5475 3224 50  0000 C CNN
+F 2 "" H 5950 2400 50  0001 C CNN
+F 3 "" H 5950 2400 50  0001 C CNN
+	1    5500 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x10_Female J?
+U 1 1 61988FD9
+P 4700 5000
+F 0 "J?" H 4728 4976 50  0000 L CNN
+F 1 "Conn_01x10_Female" H 4728 4885 50  0000 L CNN
+F 2 "" H 4700 5000 50  0001 C CNN
+F 3 "~" H 4700 5000 50  0001 C CNN
+	1    4700 5000
+	1    0    0    -1  
+$EndComp
 Wire Notes Line
-	3450 2750 7700 2750
+	9050 6300 10950 6300
+Wire Notes Line
+	10950 6300 10950 3100
+Wire Notes Line
+	10950 3100 9150 3100
+Wire Notes Line
+	9150 3100 9150 6300
+Text Label 4500 4600 2    50   ~ 0
+BTN_YAW+
+Text Label 4500 4700 2    50   ~ 0
+BTN_YAW-
+Text Label 4500 4800 2    50   ~ 0
+BTN_PITCH+
+Text Label 4500 4900 2    50   ~ 0
+BTN_PITCH-
+Text Label 4500 5000 2    50   ~ 0
+BTN_ROLL+
+Text Label 4500 5100 2    50   ~ 0
+BTN_ROLL-
+Text Label 4800 4150 2    50   ~ 0
+BTN_PITCH+
+Text Label 4750 2750 2    50   ~ 0
+BTN_YAW+
+Text Label 4750 2850 2    50   ~ 0
+BTN_YAW-
+Text Label 4750 2950 2    50   ~ 0
+BTN_PITCH+
+Text Label 4750 3050 2    50   ~ 0
+BTN_PITCH-
+Text Label 6200 2850 0    50   ~ 0
+BTN_ROLL+
+Text Label 6200 2750 0    50   ~ 0
+BTN_ROLL-
 $EndSCHEMATC
