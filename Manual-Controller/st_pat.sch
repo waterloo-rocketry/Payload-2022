@@ -3,11 +3,11 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
-Title ""
-Date ""
+Sheet 1 1
+Title "ST_PAT SLIM"
+Date "2021-02-05"
 Rev ""
-Comp ""
+Comp "RIO LIU"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -15,6 +15,17 @@ Comment4 ""
 $EndDescr
 Text Notes 9400 1450 2    50   ~ 0
 SHARP DISPLAY
+$Comp
+L power:+3V3 #PWR01
+U 1 1 60185239
+P 2750 1900
+F 0 "#PWR01" H 2750 1750 50  0001 C CNN
+F 1 "+3V3" H 2765 2073 50  0000 C CNN
+F 2 "" H 2750 1900 50  0001 C CNN
+F 3 "" H 2750 1900 50  0001 C CNN
+	1    2750 1900
+	1    0    0    -1  
+$EndComp
 $Comp
 L power:GND #PWR03
 U 1 1 60187238
@@ -439,286 +450,9 @@ Text Label 1900 2350 2    50   ~ 0
 GPS_TX
 Text Label 1900 2200 2    50   ~ 0
 GPS_RX
+Wire Wire Line
+	2750 1900 2600 1900
 NoConn ~ 1900 2050
 NoConn ~ 2600 2200
 NoConn ~ 2600 2050
-Text Label 2150 5100 0    50   ~ 0
-XBEE_TX
-Text Label 2150 5250 0    50   ~ 0
-XBEE_RX
-Text Label 4200 3150 2    50   ~ 0
-XBEE_RX
-$Comp
-L Device:Crystal Y?
-U 1 1 619FA78B
-P 2300 6600
-F 0 "Y?" H 2300 6868 50  0000 C CNN
-F 1 "Crystal" H 2300 6777 50  0000 C CNN
-F 2 "" H 2300 6600 50  0001 C CNN
-F 3 "~" H 2300 6600 50  0001 C CNN
-	1    2300 6600
-	0    1    1    0   
-$EndComp
-$Comp
-L Interface_CAN_LIN:MCP2562-E-P U?
-U 1 1 619FD495
-P 1900 3700
-F 0 "U?" H 1900 4281 50  0000 C CNN
-F 1 "MCP2562-E-P" H 1900 4190 50  0000 C CNN
-F 2 "Package_DIP:DIP-8_W7.62mm" H 1900 3200 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/25167A.pdf" H 1900 3700 50  0001 C CNN
-	1    1900 3700
-	-1   0    0    -1  
-$EndComp
-$Sheet
-S 1150 4950 1000 1050
-U 6199FBE7
-F0 "xbee module" 50
-F1 "xbee_module.sch" 50
-F2 "UART_TX" I R 2150 5100 50 
-F3 "UART_RX" I R 2150 5250 50 
-F4 "UART_~CTS" I R 2150 5400 50 
-F5 "UART_~RTS" I R 2150 5550 50 
-F6 "XBEE_RESET" I R 2150 5700 50 
-F7 "XBEE_SLEEP" I R 2150 5850 50 
-$EndSheet
-$Comp
-L Connector:Screw_Terminal_01x02 J?
-U 1 1 6199D91C
-P 850 3650
-F 0 "J?" H 768 3867 50  0000 C CNN
-F 1 "Screw_Terminal_01x02" H 768 3776 50  0000 C CNN
-F 2 "" H 850 3650 50  0001 C CNN
-F 3 "~" H 850 3650 50  0001 C CNN
-	1    850  3650
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	1400 3600 1050 3600
-Wire Wire Line
-	1050 3600 1050 3650
-Wire Wire Line
-	1400 3800 1050 3800
-Wire Wire Line
-	1050 3800 1050 3750
-Text Label 4200 3050 2    50   ~ 0
-XBEE_TX
-Text Label 2750 5950 2    50   ~ 0
-CAN_TX
-Text Label 2750 6050 2    50   ~ 0
-CAN_RX
-Text Label 2400 3600 0    50   ~ 0
-CAN_RX
-Text Label 2400 3500 0    50   ~ 0
-CAN_TX
-$Comp
-L payload2022_custom:MCP2515-canhw U?
-U 1 1 619F2F3F
-P 3300 6150
-F 0 "U?" H 3300 6615 50  0000 C CNN
-F 1 "MCP2515-canhw" H 3300 6524 50  0000 C CNN
-F 2 "" H 3250 6150 50  0001 C CNN
-F 3 "" H 3250 6150 50  0001 C CNN
-	1    3300 6150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 619E8E5F
-P 1900 6750
-F 0 "C?" V 1648 6750 50  0000 C CNN
-F 1 "27pF" V 1739 6750 50  0000 C CNN
-F 2 "" H 1938 6600 50  0001 C CNN
-F 3 "~" H 1900 6750 50  0001 C CNN
-	1    1900 6750
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 619E98EE
-P 1900 6450
-F 0 "C?" V 1648 6450 50  0000 C CNN
-F 1 "27pF" V 1739 6450 50  0000 C CNN
-F 2 "" H 1938 6300 50  0001 C CNN
-F 3 "~" H 1900 6450 50  0001 C CNN
-	1    1900 6450
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 619EA56B
-P 1400 6600
-F 0 "#PWR?" H 1400 6350 50  0001 C CNN
-F 1 "GND" H 1405 6427 50  0000 C CNN
-F 2 "" H 1400 6600 50  0001 C CNN
-F 3 "" H 1400 6600 50  0001 C CNN
-	1    1400 6600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2050 6450 2300 6450
-Wire Wire Line
-	2300 6450 2650 6450
-Wire Wire Line
-	2650 6450 2650 6550
-Wire Wire Line
-	2650 6550 2750 6550
-Connection ~ 2300 6450
-Wire Wire Line
-	2050 6750 2300 6750
-Wire Wire Line
-	2300 6750 2650 6750
-Wire Wire Line
-	2650 6750 2650 6650
-Wire Wire Line
-	2650 6650 2750 6650
-Connection ~ 2300 6750
-Wire Wire Line
-	1750 6450 1500 6450
-Wire Wire Line
-	1500 6450 1500 6600
-Wire Wire Line
-	1750 6750 1500 6750
-Wire Wire Line
-	1500 6750 1500 6600
-Connection ~ 1500 6600
-Wire Wire Line
-	1400 6600 1500 6600
-Wire Wire Line
-	2750 1900 2600 1900
-$Comp
-L power:+3V3 #PWR01
-U 1 1 60185239
-P 2750 1900
-F 0 "#PWR01" H 2750 1750 50  0001 C CNN
-F 1 "+3V3" H 2765 2073 50  0000 C CNN
-F 2 "" H 2750 1900 50  0001 C CNN
-F 3 "" H 2750 1900 50  0001 C CNN
-	1    2750 1900
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR?
-U 1 1 619FDF28
-P 1550 3300
-F 0 "#PWR?" H 1550 3150 50  0001 C CNN
-F 1 "+3V3" H 1565 3473 50  0000 C CNN
-F 2 "" H 1550 3300 50  0001 C CNN
-F 3 "" H 1550 3300 50  0001 C CNN
-	1    1550 3300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1550 3300 1900 3300
-$Comp
-L power:GND #PWR?
-U 1 1 619FF270
-P 1900 4200
-F 0 "#PWR?" H 1900 3950 50  0001 C CNN
-F 1 "GND" H 1905 4027 50  0000 C CNN
-F 2 "" H 1900 4200 50  0001 C CNN
-F 3 "" H 1900 4200 50  0001 C CNN
-	1    1900 4200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1900 4100 1900 4200
-$Comp
-L power:+3V3 #PWR?
-U 1 1 61A022D1
-P 2800 3800
-F 0 "#PWR?" H 2800 3650 50  0001 C CNN
-F 1 "+3V3" H 2815 3973 50  0000 C CNN
-F 2 "" H 2800 3800 50  0001 C CNN
-F 3 "" H 2800 3800 50  0001 C CNN
-	1    2800 3800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2800 3800 2400 3800
-$Comp
-L power:+3V3 #PWR?
-U 1 1 619A7DC3
-P 3850 5650
-F 0 "#PWR?" H 3850 5500 50  0001 C CNN
-F 1 "+3V3" H 3865 5823 50  0000 C CNN
-F 2 "" H 3850 5650 50  0001 C CNN
-F 3 "" H 3850 5650 50  0001 C CNN
-	1    3850 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_US R?
-U 1 1 619ACA8D
-P 4000 5800
-F 0 "R?" V 3795 5800 50  0000 C CNN
-F 1 "5k" V 3886 5800 50  0000 C CNN
-F 2 "" V 4040 5790 50  0001 C CNN
-F 3 "~" H 4000 5800 50  0001 C CNN
-	1    4000 5800
-	1    0    0    -1  
-$EndComp
-NoConn ~ 2750 6150
-NoConn ~ 2750 6250
-NoConn ~ 2750 6350
-NoConn ~ 2750 6450
-$Comp
-L power:GND #PWR?
-U 1 1 619BB34E
-P 2750 6900
-F 0 "#PWR?" H 2750 6650 50  0001 C CNN
-F 1 "GND" H 2755 6727 50  0000 C CNN
-F 2 "" H 2750 6900 50  0001 C CNN
-F 3 "" H 2750 6900 50  0001 C CNN
-	1    2750 6900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2750 6750 2750 6900
-NoConn ~ 3850 6650
-NoConn ~ 3850 6750
-$Comp
-L power:GND #PWR?
-U 1 1 619C550A
-P 2500 4000
-F 0 "#PWR?" H 2500 3750 50  0001 C CNN
-F 1 "GND" H 2505 3827 50  0000 C CNN
-F 2 "" H 2500 4000 50  0001 C CNN
-F 3 "" H 2500 4000 50  0001 C CNN
-	1    2500 4000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 3900 2500 3900
-Wire Wire Line
-	2500 3900 2500 4000
-Text Label 3850 6150 0    50   ~ 0
-CAN_~CS
-Wire Wire Line
-	4000 5950 3900 5950
-Wire Wire Line
-	3900 5950 3900 6050
-Wire Wire Line
-	3900 6050 3850 6050
-Wire Wire Line
-	3850 5650 3850 5950
-Wire Wire Line
-	4000 5650 3850 5650
-Connection ~ 3850 5650
-Text Label 3850 6250 0    50   ~ 0
-CAN_SD
-Text Label 3850 6350 0    50   ~ 0
-CAN_SI
-Text Label 3850 6450 0    50   ~ 0
-CAN_SCK
-NoConn ~ 3850 6550
-Text Label 4200 2950 2    50   ~ 0
-CAN_~CS
-Text Label 4200 2850 2    50   ~ 0
-CAN_SD
-Text Label 4200 2750 2    50   ~ 0
-CAN_SI
-Text Label 4200 2650 2    50   ~ 0
-CAN_SCK
-NoConn ~ 5350 -550
 $EndSCHEMATC

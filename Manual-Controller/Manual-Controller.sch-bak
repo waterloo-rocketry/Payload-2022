@@ -720,5 +720,4 @@ Text Label 4200 2750 2    50   ~ 0
 CAN_SI
 Text Label 4200 2650 2    50   ~ 0
 CAN_SCK
-NoConn ~ 5350 -550
 $EndSCHEMATC
