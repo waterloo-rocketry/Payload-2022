@@ -512,7 +512,7 @@ CAN_RX
 Text Label 2400 3500 0    50   ~ 0
 CAN_TX
 $Comp
-L payload2022_custom:MCP2515-canhw U?
+L Manual-Controller-rescue:MCP2515-canhw-payload2022_custom U?
 U 1 1 619F2F3F
 P 3300 6150
 F 0 "U?" H 3300 6615 50  0000 C CNN
@@ -720,4 +720,5 @@ Text Label 4200 2750 2    50   ~ 0
 CAN_SI
 Text Label 4200 2650 2    50   ~ 0
 CAN_SCK
+NoConn ~ 5350 -550
 $EndSCHEMATC
