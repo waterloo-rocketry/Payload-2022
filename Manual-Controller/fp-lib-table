@@ -1,3 +1,7 @@
 (fp_lib_table
+  (lib (name canhw_footprints)(type KiCad)(uri /home/joe/UWRocketry/canhw/lib/canhw_footprints.pretty)(options "")(descr ""))
+  (lib (name new_lib)(type KiCad)(uri /home/joe/UWRocketry/Payload-2022/lib/new_lib.pretty)(options "")(descr ""))
   (lib (name payload2022_custom)(type KiCad)(uri /home/joe/UWRocketry/Payload-2022/lib/payload2022_custom.pretty)(options "")(descr ""))
+  (lib (name FEATHER_M0_BASIC_PROTO)(type KiCad)(uri /home/joe/UWRocketry/ST_PATS/schematics/FEATHER_M0_BASIC_PROTO.pretty)(options "")(descr ""))
+  (lib (name st_pat)(type KiCad)(uri /home/joe/UWRocketry/ST_PATS/schematics/st_pat.pretty)(options "")(descr ""))
 )
