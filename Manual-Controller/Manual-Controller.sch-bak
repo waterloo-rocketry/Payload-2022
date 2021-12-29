@@ -4,10 +4,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Payload 22 / Manual Controller Board"
+Date "2021-12-28"
+Rev "1"
+Comp "Joe Dolina"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -42,12 +42,12 @@ Wire Wire Line
 $Comp
 L power:+3V3 #PWR021
 U 1 1 601813E6
-P 8550 1900
-F 0 "#PWR021" H 8550 1750 50  0001 C CNN
-F 1 "+3V3" H 8565 2073 50  0000 C CNN
-F 2 "" H 8550 1900 50  0001 C CNN
-F 3 "" H 8550 1900 50  0001 C CNN
-	1    8550 1900
+P 8450 2050
+F 0 "#PWR021" H 8450 1900 50  0001 C CNN
+F 1 "+3V3" H 8465 2223 50  0000 C CNN
+F 2 "" H 8450 2050 50  0001 C CNN
+F 3 "" H 8450 2050 50  0001 C CNN
+	1    8450 2050
 	1    0    0    -1  
 $EndComp
 Text Notes 2550 1350 2    50   ~ 0
@@ -98,10 +98,6 @@ F 3 "" H 6850 1600 50  0001 C CNN
 	1    6850 1600
 	1    0    0    -1  
 $EndComp
-Text Label 6600 3150 0    50   ~ 0
-SHARP_CS_D5
-Text Label 6600 3050 0    50   ~ 0
-SHARP_DISP_D6
 Text Label 6600 2650 0    50   ~ 0
 GPS_FIX_D11
 Text Label 6600 2550 0    50   ~ 0
@@ -112,10 +108,6 @@ Text Label 8650 2200 2    50   ~ 0
 SCK
 Text Label 8650 2350 2    50   ~ 0
 MOSI
-Text Label 9600 2350 0    50   ~ 0
-SHARP_CS_D5
-Text Label 9600 2050 0    50   ~ 0
-SHARP_DISP_D6
 Text Notes 1800 7100 2    50   ~ 0
 MAKES ERC HAPPY
 $Comp
@@ -208,56 +200,56 @@ F 3 "~" H 7300 1850 50  0001 C CNN
 $EndComp
 Text Notes 10000 3750 2    50   ~ 0
 FLIGHT CONTROL BUTTONS
-Text Label 9200 5350 2    50   ~ 0
+Text Label 9500 5350 2    50   ~ 0
 BTN_ROLL+
-Text Label 9200 4950 2    50   ~ 0
+Text Label 9500 4950 2    50   ~ 0
 BTN_ROLL-
-Text Label 9200 4550 2    50   ~ 0
+Text Label 9500 4550 2    50   ~ 0
 BTN_YAW+
 $Comp
 L Switch:SW_Push SW5
 U 1 1 6025805E
-P 9400 4550
-F 0 "SW5" H 9400 4835 50  0000 C CNN
-F 1 "BTN" H 9400 4744 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9400 4750 50  0001 C CNN
-F 3 "~" H 9400 4750 50  0001 C CNN
-	1    9400 4550
+P 9700 4550
+F 0 "SW5" H 9700 4835 50  0000 C CNN
+F 1 "BTN" H 9700 4744 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9700 4750 50  0001 C CNN
+F 3 "~" H 9700 4750 50  0001 C CNN
+	1    9700 4550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_Push SW6
 U 1 1 60258B51
-P 9400 4950
-F 0 "SW6" H 9400 5235 50  0000 C CNN
-F 1 "BTN" H 9400 5144 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9400 5150 50  0001 C CNN
-F 3 "~" H 9400 5150 50  0001 C CNN
-	1    9400 4950
+P 9700 4950
+F 0 "SW6" H 9700 5235 50  0000 C CNN
+F 1 "BTN" H 9700 5144 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9700 5150 50  0001 C CNN
+F 3 "~" H 9700 5150 50  0001 C CNN
+	1    9700 4950
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_Push SW7
 U 1 1 602593BA
-P 9400 5350
-F 0 "SW7" H 9400 5635 50  0000 C CNN
-F 1 "BTN" H 9400 5544 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9400 5550 50  0001 C CNN
-F 3 "~" H 9400 5550 50  0001 C CNN
-	1    9400 5350
+P 9700 5350
+F 0 "SW7" H 9700 5635 50  0000 C CNN
+F 1 "BTN" H 9700 5544 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9700 5550 50  0001 C CNN
+F 3 "~" H 9700 5550 50  0001 C CNN
+	1    9700 5350
 	1    0    0    -1  
 $EndComp
-Text Label 9200 4150 2    50   ~ 0
+Text Label 9500 4150 2    50   ~ 0
 BTN_YAW-
 $Comp
 L Switch:SW_Push SW4
 U 1 1 6025657F
-P 9400 4150
-F 0 "SW4" H 9400 4435 50  0000 C CNN
-F 1 "BTN" H 9400 4344 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9400 4350 50  0001 C CNN
-F 3 "~" H 9400 4350 50  0001 C CNN
-	1    9400 4150
+P 9700 4150
+F 0 "SW4" H 9700 4435 50  0000 C CNN
+F 1 "BTN" H 9700 4344 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9700 4350 50  0001 C CNN
+F 3 "~" H 9700 4350 50  0001 C CNN
+	1    9700 4150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -300,7 +292,7 @@ NoConn ~ 5050 4600
 NoConn ~ 5050 4800
 NoConn ~ 5050 5000
 $Comp
-L st_pat-rescue:FEATHER_M0_BASIC_PROTO-FEATHER_M0_BASIC_PROTO U4
+L Manual-Controller-rescue:FEATHER_M0_BASIC_PROTO-FEATHER_M0_BASIC_PROTO-st_pat-rescue U4
 U 1 1 602C87A2
 P 5400 2750
 F 0 "U4" H 5400 3917 50  0000 C CNN
@@ -325,7 +317,7 @@ NoConn ~ 6600 2050
 Text Notes 4950 1350 0    50   ~ 0
 FEATHER M0 ADALOGGER
 $Comp
-L st_pat-rescue:Sharp_Display_4694-st_pat U5
+L Manual-Controller-rescue:Sharp_Display_4694-st_pat-st_pat-rescue U5
 U 1 1 602ACB65
 P 8900 1750
 F 0 "U5" H 9125 1865 50  0000 C CNN
@@ -347,10 +339,9 @@ F 3 "" H 9150 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8550 1900 8650 1900
+	8450 2050 8650 2050
 NoConn ~ 9600 1900
 NoConn ~ 9600 2200
-NoConn ~ 8650 2050
 Wire Wire Line
 	6850 1600 6850 1850
 Wire Wire Line
@@ -366,7 +357,7 @@ Estimate 50mA
 Text Notes 8200 1750 0    50   ~ 0
 53uA
 $Comp
-L st_pat-rescue:GPS_Breakout_746-st_pat U2
+L Manual-Controller-rescue:GPS_Breakout_746-st_pat-st_pat-rescue U2
 U 1 1 60E458B0
 P 2250 1750
 F 0 "U2" H 2250 1865 50  0000 C CNN
@@ -387,9 +378,9 @@ GPS_RX
 NoConn ~ 1900 2050
 NoConn ~ 2600 2200
 NoConn ~ 2600 2050
-Text Label 2150 5100 0    50   ~ 0
+Text Label 1650 4700 0    50   ~ 0
 XBEE_TX
-Text Label 2150 5250 0    50   ~ 0
+Text Label 1650 4850 0    50   ~ 0
 XBEE_RX
 Text Label 4200 3150 2    50   ~ 0
 XBEE_RX
@@ -416,16 +407,16 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/25167A.pdf" H 1900 3700 50 
 	-1   0    0    -1  
 $EndComp
 $Sheet
-S 1150 4950 1000 1050
+S 650  4550 1000 1050
 U 6199FBE7
 F0 "xbee module" 50
 F1 "xbee_module.sch" 50
-F2 "UART_TX" I R 2150 5100 50 
-F3 "UART_RX" I R 2150 5250 50 
-F4 "UART_~CTS" I R 2150 5400 50 
-F5 "UART_~RTS" I R 2150 5550 50 
-F6 "XBEE_RESET" I R 2150 5700 50 
-F7 "XBEE_SLEEP" I R 2150 5850 50 
+F2 "UART_TX" I R 1650 4700 50 
+F3 "UART_RX" I R 1650 4850 50 
+F4 "UART_~CTS" I R 1650 5000 50 
+F5 "UART_~RTS" I R 1650 5150 50 
+F6 "XBEE_RESET" I R 1650 5300 50 
+F7 "XBEE_SLEEP" I R 1650 5450 50 
 $EndSheet
 $Comp
 L Connector:Screw_Terminal_01x02 J1
@@ -446,7 +437,7 @@ Wire Wire Line
 	1400 3800 1050 3800
 Wire Wire Line
 	1050 3800 1050 3750
-Text Label 4200 3050 2    50   ~ 0
+Text Label 6600 3150 0    50   ~ 0
 XBEE_TX
 Text Label 2750 5950 2    50   ~ 0
 CAN_TX
@@ -457,7 +448,7 @@ CAN_RX
 Text Label 2400 3500 0    50   ~ 0
 CAN_TX
 $Comp
-L Manual-Controller-rescue:MCP2515-canhw-payload2022_custom-Manual-Controller-rescue U3
+L Manual-Controller-rescue:MCP2515-canhw-payload2022_custom-Manual-Controller-rescue-Manual-Controller-rescue U3
 U 1 1 619F2F3F
 P 3300 6150
 F 0 "U3" H 3300 6615 50  0000 C CNN
@@ -601,7 +592,7 @@ F 1 "5k" V 3886 5800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4040 5790 50  0001 C CNN
 F 3 "~" H 4000 5800 50  0001 C CNN
 	1    4000 5800
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 NoConn ~ 2750 6150
 NoConn ~ 2750 6250
@@ -646,8 +637,6 @@ Wire Wire Line
 Wire Wire Line
 	3900 6050 3850 6050
 Wire Wire Line
-	3850 5650 3850 5950
-Wire Wire Line
 	4000 5650 3850 5650
 Connection ~ 3850 5650
 Text Label 3850 6250 0    50   ~ 0
@@ -657,7 +646,7 @@ CAN_SI
 Text Label 3850 6450 0    50   ~ 0
 CAN_SCK
 NoConn ~ 3850 6550
-Text Label 4200 2950 2    50   ~ 0
+Text Label 6600 3050 0    50   ~ 0
 CAN_~CS
 Text Label 4200 2850 2    50   ~ 0
 CAN_SD
@@ -670,30 +659,30 @@ Wire Wire Line
 	6600 3550 6650 3550
 Wire Wire Line
 	6650 3550 6650 3600
-Text Label 9200 6150 2    50   ~ 0
+Text Label 9500 6150 2    50   ~ 0
 BTN_PITCH+
-Text Label 9200 5750 2    50   ~ 0
+Text Label 9500 5750 2    50   ~ 0
 BTN_PITCH-
 $Comp
 L Switch:SW_Push SW8
 U 1 1 619F167B
-P 9400 5750
-F 0 "SW8" H 9400 6035 50  0000 C CNN
-F 1 "BTN" H 9400 5944 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9400 5950 50  0001 C CNN
-F 3 "~" H 9400 5950 50  0001 C CNN
-	1    9400 5750
+P 9700 5750
+F 0 "SW8" H 9700 6035 50  0000 C CNN
+F 1 "BTN" H 9700 5944 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9700 5950 50  0001 C CNN
+F 3 "~" H 9700 5950 50  0001 C CNN
+	1    9700 5750
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_Push SW9
 U 1 1 619F1685
-P 9400 6150
-F 0 "SW9" H 9400 6435 50  0000 C CNN
-F 1 "BTN" H 9400 6344 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9400 6350 50  0001 C CNN
-F 3 "~" H 9400 6350 50  0001 C CNN
-	1    9400 6150
+P 9700 6150
+F 0 "SW9" H 9700 6435 50  0000 C CNN
+F 1 "BTN" H 9700 6344 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 9700 6350 50  0001 C CNN
+F 3 "~" H 9700 6350 50  0001 C CNN
+	1    9700 6150
 	1    0    0    -1  
 $EndComp
 Text Label 4200 2250 2    50   ~ 0
@@ -774,72 +763,6 @@ Text Label 6600 2750 0    50   ~ 0
 SW_AUTOPILOT
 Text Label 6600 2850 0    50   ~ 0
 SW_SAFETY
-$Comp
-L Device:LED D2
-U 1 1 619F5120
-P 9750 4150
-F 0 "D2" H 9743 3895 50  0000 C CNN
-F 1 "LED" H 9743 3986 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9750 4150 50  0001 C CNN
-F 3 "~" H 9750 4150 50  0001 C CNN
-	1    9750 4150
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:LED D3
-U 1 1 619F5E64
-P 9750 4550
-F 0 "D3" H 9743 4295 50  0000 C CNN
-F 1 "LED" H 9743 4386 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9750 4550 50  0001 C CNN
-F 3 "~" H 9750 4550 50  0001 C CNN
-	1    9750 4550
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:LED D4
-U 1 1 619F6600
-P 9750 4950
-F 0 "D4" H 9743 4695 50  0000 C CNN
-F 1 "LED" H 9743 4786 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9750 4950 50  0001 C CNN
-F 3 "~" H 9750 4950 50  0001 C CNN
-	1    9750 4950
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:LED D5
-U 1 1 619F698D
-P 9750 5350
-F 0 "D5" H 9743 5095 50  0000 C CNN
-F 1 "LED" H 9743 5186 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9750 5350 50  0001 C CNN
-F 3 "~" H 9750 5350 50  0001 C CNN
-	1    9750 5350
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:LED D6
-U 1 1 619F6E51
-P 9750 5750
-F 0 "D6" H 9743 5495 50  0000 C CNN
-F 1 "LED" H 9743 5586 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9750 5750 50  0001 C CNN
-F 3 "~" H 9750 5750 50  0001 C CNN
-	1    9750 5750
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:LED D7
-U 1 1 619F85D3
-P 9750 6150
-F 0 "D7" H 9743 5895 50  0000 C CNN
-F 1 "LED" H 9743 5986 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9750 6150 50  0001 C CNN
-F 3 "~" H 9750 6150 50  0001 C CNN
-	1    9750 6150
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	10050 4150 10050 4550
 $Comp
@@ -880,4 +803,88 @@ Wire Wire Line
 Connection ~ 10050 6150
 Wire Wire Line
 	10050 6150 10050 6300
+NoConn ~ 1650 5000
+NoConn ~ 1650 5150
+NoConn ~ 1650 5450
+$Comp
+L Switch:SW_Push SW10
+U 1 1 61CBD198
+P 7050 5750
+F 0 "SW10" H 7050 6035 50  0000 C CNN
+F 1 "BTN_RESET_EVERYTHING" H 7050 5944 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 7050 5950 50  0001 C CNN
+F 3 "~" H 7050 5950 50  0001 C CNN
+	1    7050 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR033
+U 1 1 61CBDF92
+P 7400 5900
+F 0 "#PWR033" H 7400 5650 50  0001 C CNN
+F 1 "GND" H 7405 5727 50  0000 C CNN
+F 2 "" H 7400 5900 50  0001 C CNN
+F 3 "" H 7400 5900 50  0001 C CNN
+	1    7400 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 5750 7400 5750
+Wire Wire Line
+	7400 5750 7400 5900
+Wire Wire Line
+	6850 5750 6650 5750
+Text Label 4200 3050 2    50   ~ 0
+MOSI
+Text Label 4200 2950 2    50   ~ 0
+SCK
+$Comp
+L Switch:SW_DIP_x01 SW11
+U 1 1 61CCFEA5
+P 10050 2050
+F 0 "SW11" H 10050 2317 50  0000 C CNN
+F 1 "SW_DISP_ON" H 10050 2226 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 10050 2050 50  0001 C CNN
+F 3 "~" H 10050 2050 50  0001 C CNN
+	1    10050 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9600 2050 9750 2050
+Wire Wire Line
+	10350 2050 10600 2050
+Wire Wire Line
+	9600 2350 10600 2350
+Wire Wire Line
+	10600 2350 10600 2050
+$Comp
+L power:+3V3 #PWR034
+U 1 1 61CD4DE0
+P 10600 1950
+F 0 "#PWR034" H 10600 1800 50  0001 C CNN
+F 1 "+3V3" H 10615 2123 50  0000 C CNN
+F 2 "" H 10600 1950 50  0001 C CNN
+F 3 "" H 10600 1950 50  0001 C CNN
+	1    10600 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 1950 10600 2050
+Connection ~ 10600 2050
+NoConn ~ 8650 1900
+Wire Wire Line
+	3850 5650 3850 5950
+Wire Wire Line
+	6650 5750 6650 5950
+Wire Wire Line
+	6650 5950 6450 5950
+Connection ~ 6650 5750
+Wire Wire Line
+	6650 5750 6450 5750
+Text Label 1650 5300 0    50   ~ 0
+XBEE_RESET
+Text Label 6450 5750 2    50   ~ 0
+XBEE_RESET
+Text Label 6450 5950 2    50   ~ 0
+RST
 $EndSCHEMATC
