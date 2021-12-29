@@ -258,7 +258,7 @@ U 1 1 602F6777
 P 4850 4900
 F 0 "SW1" H 4850 5385 50  0000 C CNN
 F 1 "SW_PWR" H 4850 5294 50  0000 C CNN
-F 2 "st_pat:SW_Rocker_A22K1H-EA" H 4850 5100 50  0001 C CNN
+F 2 "payload2022_custom:SW_Rocker_A22K1H-EA" H 4850 5100 50  0001 C CNN
 F 3 "https://www.nkkswitches.com/pdf/ARockers-1.pdf" H 4850 5100 50  0001 C CNN
 	1    4850 4900
 	1    0    0    -1  
@@ -292,12 +292,12 @@ NoConn ~ 5050 4600
 NoConn ~ 5050 4800
 NoConn ~ 5050 5000
 $Comp
-L Manual-Controller-rescue:FEATHER_M0_BASIC_PROTO-FEATHER_M0_BASIC_PROTO-st_pat-rescue U4
+L payload2022_custom:FEATHER_M0_BASIC_PROTO-FEATHER_M0_BASIC_PROTO U4
 U 1 1 602C87A2
 P 5400 2750
 F 0 "U4" H 5400 3917 50  0000 C CNN
 F 1 "FEATHER_M0_BASIC_PROTO" H 5400 3826 50  0000 C CNN
-F 2 "FEATHER_M0_BASIC_PROTO:FEATHER_M0_BASIC_PROTO" H 5400 2750 50  0001 L BNN
+F 2 "payload2022_custom:FEATHER_M0_BASIC_PROTO" H 5400 2750 50  0001 L BNN
 F 3 "" H 5400 2750 50  0001 L BNN
 F 4 "Manufacturer Recommendation" H 5400 2750 50  0001 L BNN "STANDARD"
 F 5 "Adafruit" H 5400 2750 50  0001 L BNN "MANUFACTURER"
@@ -308,21 +308,21 @@ Wire Wire Line
 	6700 1600 6700 1950
 Wire Wire Line
 	6700 1950 6600 1950
-Text Label 4200 3250 2    50   ~ 0
+Text Label 6600 2850 0    50   ~ 0
 GPS_TX
-Text Label 4200 3350 2    50   ~ 0
+Text Label 6600 2750 0    50   ~ 0
 GPS_RX
 NoConn ~ 4200 2050
 NoConn ~ 6600 2050
 Text Notes 4950 1350 0    50   ~ 0
 FEATHER M0 ADALOGGER
 $Comp
-L Manual-Controller-rescue:Sharp_Display_4694-st_pat-st_pat-rescue U5
+L payload2022_custom:Sharp_Display_4694 U5
 U 1 1 602ACB65
 P 8900 1750
 F 0 "U5" H 9125 1865 50  0000 C CNN
 F 1 "Sharp_Display_4694" H 9125 1774 50  0000 C CNN
-F 2 "st_pat:Sharp_Display" H 8900 1750 50  0001 C CNN
+F 2 "payload2022_custom:Sharp_Display" H 8900 1750 50  0001 C CNN
 F 3 "" H 8900 1750 50  0001 C CNN
 	1    8900 1750
 	1    0    0    -1  
@@ -357,12 +357,12 @@ Estimate 50mA
 Text Notes 8200 1750 0    50   ~ 0
 53uA
 $Comp
-L Manual-Controller-rescue:GPS_Breakout_746-st_pat-st_pat-rescue U2
+L payload2022_custom:GPS_Breakout_746 U2
 U 1 1 60E458B0
 P 2250 1750
 F 0 "U2" H 2250 1865 50  0000 C CNN
 F 1 "GPS_Breakout_746" H 2250 1774 50  0000 C CNN
-F 2 "st_pat:GPS_Breakout_746" H 2250 1750 50  0001 C CNN
+F 2 "payload2022_custom:GPS_Breakout_746" H 2250 1750 50  0001 C CNN
 F 3 "" H 2250 1750 50  0001 C CNN
 	1    2250 1750
 	1    0    0    -1  
@@ -382,7 +382,7 @@ Text Label 1650 4700 0    50   ~ 0
 XBEE_TX
 Text Label 1650 4850 0    50   ~ 0
 XBEE_RX
-Text Label 4200 3150 2    50   ~ 0
+Text Label 4200 3250 2    50   ~ 0
 XBEE_RX
 $Comp
 L Device:Crystal Y1
@@ -437,7 +437,7 @@ Wire Wire Line
 	1400 3800 1050 3800
 Wire Wire Line
 	1050 3800 1050 3750
-Text Label 6600 3150 0    50   ~ 0
+Text Label 4200 3350 2    50   ~ 0
 XBEE_TX
 Text Label 2750 5950 2    50   ~ 0
 CAN_TX
@@ -447,17 +447,6 @@ Text Label 2400 3600 0    50   ~ 0
 CAN_RX
 Text Label 2400 3500 0    50   ~ 0
 CAN_TX
-$Comp
-L Manual-Controller-rescue:MCP2515-canhw-payload2022_custom-Manual-Controller-rescue-Manual-Controller-rescue U3
-U 1 1 619F2F3F
-P 3300 6150
-F 0 "U3" H 3300 6615 50  0000 C CNN
-F 1 "MCP2515-canhw" H 3300 6524 50  0000 C CNN
-F 2 "payload2022_custom:mcp2562" H 3250 6150 50  0001 C CNN
-F 3 "" H 3250 6150 50  0001 C CNN
-	1    3300 6150
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:C C2
 U 1 1 619E8E5F
@@ -646,13 +635,13 @@ CAN_SI
 Text Label 3850 6450 0    50   ~ 0
 CAN_SCK
 NoConn ~ 3850 6550
-Text Label 6600 3050 0    50   ~ 0
+Text Label 6600 3350 0    50   ~ 0
 CAN_~CS
-Text Label 4200 2850 2    50   ~ 0
+Text Label 6600 3050 0    50   ~ 0
 CAN_SD
-Text Label 4200 2750 2    50   ~ 0
+Text Label 6600 3150 0    50   ~ 0
 CAN_SI
-Text Label 4200 2650 2    50   ~ 0
+Text Label 6600 3250 0    50   ~ 0
 CAN_SCK
 NoConn ~ 5350 -550
 Wire Wire Line
@@ -693,9 +682,9 @@ Text Label 4200 2450 2    50   ~ 0
 BTN_ROLL-
 Text Label 4200 2550 2    50   ~ 0
 BTN_ROLL+
-Text Label 6600 3250 0    50   ~ 0
+Text Label 4200 2750 2    50   ~ 0
 BTN_PITCH-
-Text Label 6600 3350 0    50   ~ 0
+Text Label 4200 2650 2    50   ~ 0
 BTN_PITCH+
 Wire Wire Line
 	7450 1850 7600 1850
@@ -759,9 +748,9 @@ Text Label 7350 4700 2    50   ~ 0
 SW_SAFETY
 Text Label 5850 4700 2    50   ~ 0
 SW_AUTOPILOT
-Text Label 6600 2750 0    50   ~ 0
+Text Label 4200 3150 2    50   ~ 0
 SW_AUTOPILOT
-Text Label 6600 2850 0    50   ~ 0
+Text Label 4200 2850 2    50   ~ 0
 SW_SAFETY
 Wire Wire Line
 	10050 4150 10050 4550
@@ -859,12 +848,12 @@ Wire Wire Line
 $Comp
 L power:+3V3 #PWR034
 U 1 1 61CD4DE0
-P 10600 1950
-F 0 "#PWR034" H 10600 1800 50  0001 C CNN
-F 1 "+3V3" H 10615 2123 50  0000 C CNN
-F 2 "" H 10600 1950 50  0001 C CNN
-F 3 "" H 10600 1950 50  0001 C CNN
-	1    10600 1950
+P 10600 1650
+F 0 "#PWR034" H 10600 1500 50  0001 C CNN
+F 1 "+3V3" H 10615 1823 50  0000 C CNN
+F 2 "" H 10600 1650 50  0001 C CNN
+F 3 "" H 10600 1650 50  0001 C CNN
+	1    10600 1650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -887,4 +876,26 @@ XBEE_RESET
 Text Label 6450 5950 2    50   ~ 0
 RST
 NoConn ~ 1650 5450
+$Comp
+L payload2022_custom:MCP2515_payload_22 U3
+U 1 1 61CBD3DB
+P 3300 6150
+F 0 "U3" H 3300 6615 50  0000 C CNN
+F 1 "MCP2515_payload_22" H 3300 6524 50  0000 C CNN
+F 2 "payload2022_custom:MCP2515" H 3250 6150 50  0001 C CNN
+F 3 "" H 3250 6150 50  0001 C CNN
+	1    3300 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R5
+U 1 1 61CBD530
+P 10600 1800
+F 0 "R5" H 10668 1846 50  0000 L CNN
+F 1 "5k" H 10668 1755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 10640 1790 50  0001 C CNN
+F 3 "~" H 10600 1800 50  0001 C CNN
+	1    10600 1800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
