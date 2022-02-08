@@ -57,6 +57,10 @@
 // float          PWM_freq()                 calculates the frequency
 // float          PWM_duty()                 calculates the duty
 
+//STEPPER OUTPUT CONVERSION
+//// int          calc_steps(channel number) returns number of stepper motor steps
+
+
 // NOTE: PWM_read(CH) and RC_decode(CH) use the same flags to detect when new data is available, meaning data could be lost if both are used on the same channel at the same time.
 // SUGESTION: if you want to use PWM_read(CH) to find the frame rate of an RC channel call it before RC_decode(CH). The output from RC_decode(CH) will then default to the failsafe.
 
@@ -148,10 +152,10 @@
  
 // PWM input pins, any of the following pins can be used: digital 0 - 13 or analog A0 - A5 
 
-const int pwmPIN[]={2,3,4,5,6,7}; // an array to identify the PWM input pins (the array can be any length) 
+const int pwmPIN[]={A0,A1,A2,A3,A4,A5}; // an array to identify the PWM input pins (the array can be any length) 
                                   // first pin is channel 1, second is channel 2...etc
 
-int RC_inputs = 0;                // The number of pins in pwmPIN that are connected to an RC receiver. Addition pins not connected to an RC receiver could be used for any other purpose i.e. detecting the echo pulse on an HC-SR04 ultrasonic distance sensor
+int RC_inputs = 3;                // The number of pins in pwmPIN that are connected to an RC receiver. Addition pins not connected to an RC receiver could be used for any other purpose i.e. detecting the echo pulse on an HC-SR04 ultrasonic distance sensor
                                   // When 0, it will automatically update to the number of pins specified in pwmPIN[] after calling setup_pwmRead().                                                
 // Calibration of each RC channel:
  
@@ -161,10 +165,10 @@ int RC_inputs = 0;                // The number of pins in pwmPIN that are conne
 // if the RC_min[], RC_mid[], RC_max[] are empty or have missing data the calibration will default to min 1000us, mid 1500us and max 2000us.
 
 //SANWA 6CH 40MHz with corona RP6D1  
-//                THR     RUD     PIT     BAL     SWITCH  SLIDER
-int RC_min[6] = { 988,    1060,   976,    960,    1056,   1116};
-int RC_mid[6] = { 1472,   1446,   1424,   1398,   1374,   1460};
-int RC_max[6] = { 1800,   1816,   1796,   1764,   1876,   1796};
+//               THR-1     RUD-2   AILE-3  ElEV-4   GEAR-5  AUX1-6
+int RC_min[6] = { 1104,    1200,   1196,   1516,    1056,   1088};
+int RC_mid[6] = { 1580,   1512,   1536,   1556,   1374,   1084};
+int RC_max[6] = { 1944,   1836,   1844,   1816,   1876,   1116};
 
 // fail safe positions
 
@@ -487,4 +491,37 @@ float PWM_duty(){
   float duty;
   duty = pin_pwm/pin_period;
   return duty;
+}
+
+int calc_steps(int CH){
+  float num_steps = 2048*RC_in[CH-1];
+  Serial.print("CH2: "); Serial.print(RC_in[2]); Serial.print(RC_in[CH]);
+
+  if(num_steps > 300){
+    num_steps = 10;
+  }
+  else if(num_steps <-300){
+    num_steps = -10;
+  }
+  else{
+    num_steps = 0;
+  }
+
+  return num_steps;
+
+}
+
+
+int calc_uS(float cmd, int servo){                                // cmd = commanded position +-100% 
+                                                                  // servo = servo num (to apply correct direction, rates and trim)
+  int i = servo-1;
+  float dir;
+  if(servo_dir[i] == 0) dir = -1; else dir = 1;                   // set the direction of servo travel
+  
+  cmd = 1500 + (cmd*servo_rates[i]*dir + servo_subtrim[i])*500;   // apply servo rates and sub trim, then convert to a uS value
+
+  if(cmd > 2500) cmd = 2500;                                      // limit pulsewidth to the range 500 to 2500us
+  else if(cmd < 500) cmd = 500;
+
+  return cmd;
 }
