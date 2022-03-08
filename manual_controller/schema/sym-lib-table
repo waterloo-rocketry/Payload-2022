@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name Manual-Controller-cache)(type Legacy)(uri ${KIPRJMOD}/Manual-Controller-cache.lib)(options "")(descr ""))
-  (lib (name xbee_module-cache)(type Legacy)(uri ${KIPRJMOD}/xbee_module-cache.lib)(options "")(descr ""))
-  (lib (name payload2022_custom)(type Legacy)(uri ${KIPRJMOD}/../lib/payload2022_custom.lib)(options "")(descr ""))
-)

@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name payload2022_custom)(type Legacy)(uri ${KIPRJMOD}/../../lib/payload2022_custom.lib)(options "")(descr ""))
-)
