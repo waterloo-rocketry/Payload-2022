@@ -32,3 +32,6 @@ Communicates with Cubesat and can override autonomous control with manual contro
 
 More information available in Design Docs:
 https://docs.google.com/document/d/1taV1tidALE3emlK4XI88u090zswx8rMgQPDmcY7zMuU/edit?usp=sharing
+
+SENSING COMPONENTS DATA:
+https://docs.google.com/spreadsheets/d/1w2s266TZ0PPDU81SyGsCCDq5ps78rXRAA3cDaBvMYBY/edit#gid=174579378
