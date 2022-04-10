@@ -25,10 +25,16 @@ using namespace BLA;
 #define Nobs 4   // position, acceleration
 
 // measurement std of the noise (R)
-#define n_px 0.009 // position measurement noise x (m)
-#define n_ax 0.0012 // acceleration measurement noise x (m/s^2)
-#define n_hx 0.0048 // heading measurement noise x (gauss)
-#define n_rx 0.0088 // angular velocity measurement noise x (dps)
+//#define n_px 0.009 // position measurement noise x (m)
+//#define n_ax 0.0012 // acceleration measurement noise x (m/s^2)
+//#define n_hx 0.0048 // heading measurement noise x (gauss)
+//#define n_rx 0.0088 // angular velocity measurement noise x (dps)
+
+// measurement std of the noise (R) (test)
+#define n_px 0.9 // position measurement noise x (m)
+#define n_ax 0.12 // acceleration measurement noise x (m/s^2)
+#define n_hx 0.48 // heading measurement noise x (gauss)
+#define n_rx 1.8 // angular velocity measurement noise x (dps)
 
 // model std (1/inertia) (Q)
 #define m_px 0.3
@@ -151,8 +157,8 @@ void SIMULATOR_UPDATE(){
   state(0) = SIMUL_AMP*sin(tcur/1000.0/SIMUL_PERIOD); // position
   state(1) = SIMUL_AMP/SIMUL_PERIOD*cos(tcur/1000.0/SIMUL_PERIOD); // speed
   state(2) = -SIMUL_AMP/SIMUL_PERIOD/SIMUL_PERIOD*sin(tcur/1000.0/SIMUL_PERIOD); // acceleration
-  state(3) = SIMUL_AMP/10*sin(tcur/1000.0/SIMUL_PERIOD); // angle
-  state(4) = SIMUL_AMP/10/SIMUL_PERIOD*cos(tcur/1000.0/SIMUL_PERIOD); // angular velocity
+  state(3) = SIMUL_AMP*2*sin(tcur/1000.0/SIMUL_PERIOD); // angle
+  state(4) = SIMUL_AMP*2/SIMUL_PERIOD*cos(tcur/1000.0/SIMUL_PERIOD); // angular velocity
 }
 
 void SIMULATOR_MEASURE(){
