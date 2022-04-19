@@ -349,21 +349,21 @@ void print_decimal_2_percentage(float dec){
  */
 
 
-int calc_steps(int CH){
-  float num_steps = 2048*rc_in[CH-1];
+int calc_speed(int CH){
+  float new_speed = 255*rc_in[CH-1];
   Serial.print("CH2: "); Serial.print(rc_in[2]); Serial.print(rc_in[CH]);
 
-  if(num_steps > 300){
-    num_steps = 10;
+  if(new_speed > 255){
+    new_speed = 10;
   }
-  else if(num_steps <-300){
-    num_steps = -10;
+  else if(new_speed <-255){
+    new_speed = -10;
   }
   else{
-    num_steps = 0;
+    new_speed = 0;
   }
 
-  return num_steps;
+  return new_speed;
 
 }
 
