@@ -1,17 +1,13 @@
-// servo variables
 
-// include the servo library to control the servos
-#include <Servo.h> 
-#include <Stepper.h>
-#include "CytronMotorDriver.h"
-
-
-
+#include <Servo.h> //RC controller 
+#include "CytronMotorDriver.h" //Brushed motor 
+#include <Wire.h> //I2C for IMU
+#include <LSM6.h> //Orientation sensing IMU
+#include <SPI.h>
+#include <SD.h>
 
 
 // Configure the motor driver.
-// on the arduino uno, nano and pro mini these pins are 3, 5, 6, 9, 10 and 11
-
 CytronMD motor(PWM_DIR, 9, 8);  // PWM = Pin 9, DIR = Pin 9.
 
 
@@ -34,48 +30,38 @@ unsigned long rc_update;
 // specify the number of receiver channels
 const int channels = 3;
 // an array to store the calibrated input from receiver                   
-float rc_in[channels];                     
+float rc_in[channels];  
+//channel used to control motor
+const uint8_t CHANNEL = 3; 
+//testing variables
+const bool PRINT = false;
+//SD card filename
+String filename = "test_2022_04_22.txt";
+File datalog;
+
+
 
 void setup() {
 
-    setup_pwm_read();                      
+  if(PRINT)
     Serial.begin(115200);
+
+  setup_error();
+  setup_pwm_read();
+  if(!setup_IMU())
+    print_error("IMU Disconnected");
+                      
 }
 
 void loop() {  
-    
-    now = millis();
-    
-    // if RC data is available or 25ms has passed since last update (adjust to > frame rate of receiver)
-    if(rc_avail() || now - rc_update > 25){    
       
-      rc_update = now;                           
+                     
+  get_rc_command();
+  get_motor_speed();
+  get_IMU_data();
+  get_gps();
+  set_motor_speed();
+  save_sd_data();
       
-      // uncommment to print raw data from receiver to serial
-      print_rc_pwm();                          
-      
-      // run through each RC channel
-      for (int i = 0; i<channels; i++){       
-        int CH = i+1;
-        
-        // decode receiver channel and apply failsafe
-        rc_in[i] = rc_decode(CH);             
-        
-        // uncomment to print calibrated receiver input (+-100%) to serial
-        print_decimal_2_percentage(rc_in[i]);          
-      }
-     // uncomment when printing calibrated receiver input to serial.
-     Serial.println();                       
 
-      
-      // MIXING ON
-      if (servo_mix_on == true){              
-        int new_speed = calc_speed(3); 
-        
-        Serial.print("step width: "); Serial.println(new_speed); 
-
-        motor.setSpeed(new_speed);
-
-    }
-  }
 }
