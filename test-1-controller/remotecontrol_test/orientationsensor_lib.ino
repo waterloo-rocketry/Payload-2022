@@ -12,6 +12,8 @@ LA_So specification in the LSM6DS33 datasheet (page 11)
 states a conversion factor of 0.061 mg/LSB (least
 significant bit) at this FS setting, so the raw reading of
 16276 corresponds to 16276 * 0.061 = 992.8 mg = 0.9928 g.
+SDA - A4
+SCL - A5
 */
 
 
@@ -21,7 +23,7 @@ char report[80];
 
 bool setup_IMU()
 {
-  Serial.begin(9600);
+  //Serial.begin(9600);
   Wire.begin();
 
   uint8_t timeout = 0;
