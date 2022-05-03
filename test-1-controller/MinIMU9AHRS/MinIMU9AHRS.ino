@@ -1,32 +1,23 @@
 /*
-
 MinIMU-9-Arduino-AHRS
 Pololu MinIMU-9 + Arduino AHRS (Attitude and Heading Reference System)
-
 Copyright (c) 2011-2016 Pololu Corporation.
 http://www.pololu.com/
-
 MinIMU-9-Arduino-AHRS is based on sf9domahrs by Doug Weibel and Jose Julio:
 http://code.google.com/p/sf9domahrs/
-
 sf9domahrs is based on ArduIMU v1.5 by Jordi Munoz and William Premerlani, Jose
 Julio and Doug Weibel:
 http://code.google.com/p/ardu-imu/
-
 MinIMU-9-Arduino-AHRS is free software: you can redistribute it and/or modify it
 under the terms of the GNU Lesser General Public License as published by the
 Free Software Foundation, either version 3 of the License, or (at your option)
 any later version.
-
 MinIMU-9-Arduino-AHRS is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
 FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
 more details.
-
 You should have received a copy of the GNU Lesser General Public License along
 with MinIMU-9-Arduino-AHRS. If not, see <http://www.gnu.org/licenses/>.
-A4 - SDA 
-A5 - SLC
 */
 
 // Uncomment the following line to use a MinIMU-9 v5 or AltIMU-10 v5. Leave commented for older IMUs (up through v4).
@@ -124,6 +115,10 @@ float Omega_P[3]= {0,0,0};//Omega Proportional correction
 float Omega_I[3]= {0,0,0};//Omega Integrator
 float Omega[3]= {0,0,0};
 
+//A4 - SDA
+//A5 - SLC
+
+
 // Euler angles
 float roll;
 float pitch;
@@ -170,10 +165,9 @@ void setup()
   Accel_Init();
   Compass_Init();
   Gyro_Init();
-   //Serial.println("sensor init");
 
   delay(20);
-  /*
+
   for(int i=0;i<32;i++)    // We take some readings...
     {
     Read_Gyro();
@@ -198,14 +192,14 @@ void setup()
   timer=millis();
   delay(20);
   counter=0;
-  */
 }
-
+int main_counter = 0;
 void loop() //Main Loop
 {
   if((millis()-timer)>=20)  // Main loop runs at 50Hz
   {
-       counter++;
+    main_counter++;
+    counter++;
     timer_old = timer;
     timer=millis();
     if (timer>timer_old)
@@ -218,11 +212,11 @@ void loop() //Main Loop
       G_Dt = 0;
 
 
+
     // *** DCM algorithm
     // Data adquisition
     Read_Gyro();   // This read gyro data
     Read_Accel();     // Read I2C accelerometer
-    Serial.println("helloooo");
 
     if (counter > 5)  // Read compass data at 10Hz... (5 loop runs)
     {
@@ -230,32 +224,17 @@ void loop() //Main Loop
       Read_Compass();    // Read I2C magnetometer
       Compass_Heading(); // Calculate magnetic heading
     }
-/*
+
     // Calculations...
     Matrix_update();
     Normalize();
     Drift_correction();
     Euler_angles();
     // ***
-    */
-
-      Serial.print(",AN:");
-      Serial.print(AN[0]);  //(int)read_adc(0)
-      Serial.print(",");
-      Serial.print(AN[1]);
-      Serial.print(",");
-      Serial.print(AN[2]);  
-      Serial.print(",");
-      Serial.print(AN[3]);
-      Serial.print (",");
-      Serial.print(AN[4]);
-      Serial.print (",");
-      Serial.print(AN[5]);
-      Serial.print(",");
-      Serial.print(c_magnetom_x);
-      Serial.print (",");
-      Serial.print(c_magnetom_y);
-      Serial.print (",");
-      Serial.print(c_magnetom_z);  }
+    if (main_counter >= 25){ // 2 Hz
+      printdata();
+      main_counter = 0;
+    }
+  }
 
 }

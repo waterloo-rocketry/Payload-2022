@@ -156,9 +156,9 @@ void Matrix_update(void)
 }
 
 void Euler_angles(void)
+// We use this algorithm. someone tell me why
 {
   pitch = -asin(DCM_Matrix[2][0]);
   roll = atan2(DCM_Matrix[2][1],DCM_Matrix[2][2]);
   yaw = atan2(DCM_Matrix[1][0],DCM_Matrix[0][0]);
 }
-
