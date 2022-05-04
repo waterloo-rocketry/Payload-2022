@@ -13,13 +13,12 @@ int RC_inputs = 3;
                                                                                   
 // Calibration of each RC channel:
 //SANWA 6CH 40MHz with corona RP6D1  
-//               THR-1     RUD-2   AILE-3  ElEV-4   GEAR-5  AUX1-6
-int RC_min[6] = { 1104,    1200,   1196,   1516,    1056,   1088};
+//                THR-1   RUD-2   AILE-3  ElEV-4  GEAR-5  AUX1-6
+int RC_min[6] = { 1104,   1200,   1196,   1516,   1056,   1088};
 int RC_mid[6] = { 1580,   1512,   1536,   1556,   1374,   1084};
 int RC_max[6] = { 1944,   1836,   1844,   1816,   1876,   1116};
 
 // fail safe positions
-
 float RC_failsafe[] = {0.00, 0.00, 1, 0.00, -0.25, 0.00};
    
 // enter a failsafe position (in the range of -+1) for each RC channel in case radio signal is lost

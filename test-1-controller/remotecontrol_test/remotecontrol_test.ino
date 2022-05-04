@@ -1,8 +1,7 @@
-
-#include <Servo.h> //RC controller 
-#include "CytronMotorDriver.h" //Brushed motor 
-#include <Wire.h> //I2C for IMU
-#include <LSM6.h> //Orientation sensing IMU
+#include <Servo.h> 		// RC controller 
+#include "CytronMotorDriver.h" 	// Brushed motor 
+#include <Wire.h> 		// I2C for IMU
+#include <LSM6.h> 		// Orientation sensing IMU
 #include <SPI.h>
 #include <SD.h>
 
@@ -27,41 +26,29 @@ unsigned long rc_update;
 
 // Receiver variables
 
-// specify the number of receiver channels
-const int channels = 3;
-// an array to store the calibrated input from receiver                   
-float rc_in[channels];  
-//channel used to control motor
-const uint8_t CHANNEL = 3; 
-//testing variables
-const bool PRINT = false;
-//SD card filename
-String filename = "test_2022_04_22.txt";
+const int channels = 3; // receiver channles
+float rc_in[channels]; // calibrated inputs from receiver
+const uint8_t CHANNEL = 3; // channel to control motor
+const bool PRINT = false; // debug bool
+String filename = "test_2022_04_22.txt"; // SD card filename
 File datalog;
 
-
-
 void setup() {
-
   if(PRINT)
     Serial.begin(115200);
 
   setup_error();
   setup_pwm_read();
+
   if(!setup_IMU())
     print_error("IMU Disconnected");
-                      
 }
 
 void loop() {  
-      
-                     
   get_rc_command();
   get_motor_speed();
   get_IMU_data();
   get_gps();
   set_motor_speed();
   save_sd_data();
-      
-
 }

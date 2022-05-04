@@ -29,31 +29,27 @@ with MinIMU-9-Arduino-AHRS. If not, see <http://www.gnu.org/licenses/>.
 */
 
 #ifdef IMU_V5
-
-#include <LSM6.h>
-#include <LIS3MDL.h>
-
-LSM6 gyro_acc;
-LIS3MDL mag;
-
-#else // older IMUs through v4
-
-#include <L3G.h>
-#include <LSM303.h>
-
-L3G gyro;
-LSM303 compass;
-
+  #include <LSM6.h>
+  #include <LIS3MDL.h>
+  
+  LSM6 gyro_acc;
+  LIS3MDL mag;
+  
+  #else // older IMUs through v4
+  
+  #include <L3G.h>
+  #include <LSM303.h>
+  
+  L3G gyro;
+  LSM303 compass;
 #endif
 
 
-void I2C_Init()
-{
+void I2C_Init() {
   Wire.begin();
 }
 
-void Gyro_Init()
-{
+void Gyro_Init() {
 #ifdef IMU_V5
   // Accel_Init() should have already called gyro_acc.init() and enableDefault()
   gyro_acc.writeReg(LSM6::CTRL2_G, 0x4C); // 104 Hz, 2000 dps full scale
@@ -65,8 +61,7 @@ void Gyro_Init()
 #endif
 }
 
-void Read_Gyro()
-{
+void Read_Gyro() {
 #ifdef IMU_V5
   gyro_acc.readGyro();
 
@@ -86,8 +81,7 @@ void Read_Gyro()
   gyro_z = SENSOR_SIGN[2] * (AN[2] - AN_OFFSET[2]);
 }
 
-void Accel_Init()
-{
+void Accel_Init() {
 #ifdef IMU_V5
   gyro_acc.init();
   gyro_acc.enableDefault();
