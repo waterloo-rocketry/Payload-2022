@@ -1,3 +1,34 @@
+Kalman Filter definition:
+
+Bayesian logic -- a process of making predictions and then seeing whether those predictions are true, iteratively
+over time, (due to the law of large numbers), the prediction should tend to converge on a good estimationo
+
+"However, when using the Kalman filter to estimate the state x, the probability distribution of interest is associated with the current states conditioned on the measurements up to the current timestep. (This is achieved by marginalising out the previous states and dividing by the probability of the measurement set.)"
+
+[](https://en.wikipedia.org/wiki/Recursive_Bayesian_estimation)
+
+The tl;dr on this is that we can  predict, update, and refine our model over time, which results in having a
+pretty decent method of estimation for single variable or multivariate systems
+
+in terms of like a markov chain, you might write this as:
+
+`p(x_k | x_{k-1}, x_{k-2}, ... ,x_0) = p(x_k | x_{k-1}`
+
+which basically implies that the prediction of the current state based on the previous state depends on all the
+other states
+
+now, we get to the fun part!!!!!
+
+because we can very nicely put predictions and probabilities into matrices, computers can do it pretty easily
+
+### What do we need to predict? 
+
+well, it would be kinda nice to know something like position, acceleration, heading, angular velocity etc. etc. 
+(y'know, the essentials!)
+
+
+`THE FOLLOWING IS JUST FROM THE BASIC README`
+
 # Payload-2022
 Electronics and Software for Payload 2022 Deployable :Cube:
 
