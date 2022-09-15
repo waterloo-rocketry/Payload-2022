@@ -1,4 +1,4 @@
-  /*
+/*
 The sensor outputs provided by the library are the raw
 16-bit values obtained by concatenating the 8-bit high and
 low accelerometer and gyro data registers. They can be
@@ -27,7 +27,7 @@ bool setup_IMU()
   Wire.begin();
 
   uint8_t timeout = 0;
-  while (!imu.init()&& timeout < 200)
+  while (!imu.init() && timeout < 200)
   {
     if(PRINT && timeout == 0)
       Serial.println("Failed to detect and initialize IMU!");
